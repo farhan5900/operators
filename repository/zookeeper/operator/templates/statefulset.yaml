@@ -48,24 +48,25 @@ spec:
           command:
             - sh
             - -c
-            - "ZOOKEEPERPATH=`pwd` /etc/zookeeper/bootstrap.sh \
-              --servers={{ .Params.NODE_COUNT }} \
-              --data_dir=/var/lib/zookeeper/data \
-              --data_log_dir=/logs \
-              --conf_dir=/conf \
-              --client_port={{ .Params.CLIENT_PORT }} \
-              --election_port={{ .Params.ELECTION_PORT }} \
-              --server_port={{ .Params.SERVER_PORT }} \
-              --tick_time=2000 \
-              --init_limit=10 \
-              --sync_limit=5 \
-              --heap=512M \
-              --max_client_cnxns=60 \
-              --snap_retain_count=3 \
-              --purge_interval=12 \
-              --max_session_timeout=40000 \
-              --min_session_timeout=4000 \
-              --log_level=INFO"
+            - "echo `whoami` && sleep 5000"
+              #- "ZOOKEEPERPATH=`pwd` /etc/zookeeper/bootstrap.sh \
+              #--servers={{ .Params.NODE_COUNT }} \
+              #--data_dir=/var/lib/zookeeper/data \
+              #--data_log_dir=/logs \
+              #--conf_dir=/conf \
+              #--client_port={{ .Params.CLIENT_PORT }} \
+              #--election_port={{ .Params.ELECTION_PORT }} \
+              #--server_port={{ .Params.SERVER_PORT }} \
+              #--tick_time=2000 \
+              #--init_limit=10 \
+              #--sync_limit=5 \
+              #--heap=512M \
+              #--max_client_cnxns=60 \
+              #--snap_retain_count=3 \
+              #--purge_interval=12 \
+              #--max_session_timeout=40000 \
+              #--min_session_timeout=4000 \
+              #--log_level=INFO"
           readinessProbe:
             exec:
               command:
